@@ -53,6 +53,14 @@ html, body {
    MAIN PAGE HEADINGS (NEW UPDATE)
 --------------------------------------------------------- */
 
+title {
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+    font-size: 2.8rem;
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+
 h1 {
     text-align: center;
     font-family: 'Fredoka One', cursive;
@@ -228,3 +236,4 @@ h1 {
         font-size: 2.2rem;
     }
 }
+
