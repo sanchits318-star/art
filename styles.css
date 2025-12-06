@@ -61,6 +61,10 @@ title {
     margin-bottom: 25px;
 }
 
+big-subtitle {
+   text-align: center;
+}
+
 h1 {
     text-align: center;
     font-family: 'Fredoka One', cursive;
@@ -236,4 +240,5 @@ h1 {
         font-size: 2.2rem;
     }
 }
+
 
