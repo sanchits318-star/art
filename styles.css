@@ -1,5 +1,106 @@
-/* Add these new styles to your existing styles.css */
+/* ---------------- GLOBAL CENTRING ---------------- */
 
+body, html {
+    text-align: center;          /* Center all text by default */
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensures all sections and page containers centre their content */
+section, header, footer, main, .content-container, .big-card {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ensures all flexboxes and grids centre their items nicely */
+.home-grid,
+.top-menu,
+.flex-center,
+.grid-center {
+    justify-content: center;
+    align-items: center;
+}
+
+/* ---------------- NAVBAR ---------------- */
+.top-menu {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 15px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    backdrop-filter: blur(8px);
+    border-bottom: 3px solid rgba(255, 100, 150, 0.3);
+}
+
+.top-menu a {
+    font-family: 'Fredoka One', cursive;
+    color: #333;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.top-menu a:hover {
+    background: rgba(255, 180, 200, 0.6);
+    transform: scale(1.06);
+}
+
+/* ---------------- BACKGROUND ---------------- */
+.home-background {
+    background: linear-gradient(135deg, #ff4d6d, #6a88ff);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* ---------------- HOMEPAGE GRID OF LINKS ---------------- */
+.home-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    justify-items: center;     /* Centers each card */
+}
+
+.home-link-card {
+    display: block;
+    padding: 25px;
+    border-radius: 28px;
+    background: white;
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+    font-size: 1.7rem;
+    line-height: 1.4;
+    width: 100%;
+    max-width: 340px;          /* keeps them centred and same size */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+    transition: 0.3s;
+}
+
+.home-link-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.3);
+}
+
+/* ---------------- RAINBOW GRADIENTS ---------------- */
+.rainbow-1 { background: linear-gradient(135deg, #ff9a9e, #fecfef); }
+.rainbow-2 { background: linear-gradient(135deg, #a1c4fd, #c2e9fb); }
+.rainbow-3 { background: linear-gradient(135deg, #fbc2eb, #a6c1ee); }
+.rainbow-4 { background: linear-gradient(135deg, #fddb92, #d1fdff); }
+.rainbow-5 { background: linear-gradient(135deg, #f6d365, #fda085); }
+.rainbow-6 { background: linear-gradient(135deg, #84fab0, #8fd3f4); }
+.rainbow-7 { background: linear-gradient(135deg, #ffecd2, #fcb69f); }
+.rainbow-8 { background: linear-gradient(135deg, #cfd9df, #e2ebf0); }
+.rainbow-9 { background: linear-gradient(135deg, #ffdde1, #ee9ca7); }
+
+/* ---------------- PAGE CONTENT ---------------- */
 .content-container {
     max-width: 1100px;
     margin: 0 auto;
@@ -15,78 +116,13 @@
     max-width: 900px;
     line-height: 1.7;
     font-size: 1.4rem;
-}
-
-.big-card h2 {
-    font-family: 'Fredoka One', cursive;
-    font-size: 3rem;
     text-align: center;
-    margin-bottom: 25px;
 }
 
-.resources-grid .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.resource-item {
-    background: rgba(255,255,255,0.7);
-    padding: 20px;
-    border-radius: 20px;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.age-sections {
-    margin: 60px 0;
-}
-
-.age-group {
-    background: white;
-    margin: 30px auto;
-    padding: 30px;
-    border-radius: 30px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-    max-width: 800px;
-}
-
-.age-group h3 {
-    font-family: 'Fredoka One', cursive;
-    font-size: 2.8rem;
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.activity {
-    font-size: 1.6rem;
-    padding: 15px;
-    margin: 15px 0;
-    background: rgba(255,200,255,0.3);
-    border-radius: 20px;
-    font-weight: bold;
-}
-
-.age-0-2 { background: linear-gradient(135deg, #ffb3e6, #c2e9fb); }
-.age-2-3 { background: linear-gradient(135deg, #a8e6cf, #ffd93d); }
-.age-3-5 { background: linear-gradient(135deg, #ff9a9e, #fad0c4); }
-.age-6-8 { background: linear-gradient(135deg, #baffc9, #bae1ff); }
-
-.videos-section {
-    margin: 80px 0;
-}
-
-.videos-section .video-card {
-    max-width: 700px;
-    margin: 40px auto;
-}
-
-/* Make text even friendlier on mobile */
+/* ---------------- MEDIA FIX ---------------- */
 @media (max-width: 600px) {
-    .big-card { padding: 25px; font-size: 1.3rem; }
-    .big-card h2 { font-size: 2.4rem; }
-    .resource-item { font-size: 1.3rem; }
+    .top-menu a {
+        font-size: 1rem;
+        padding: 6px 10px;
+    }
 }
