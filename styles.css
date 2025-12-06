@@ -1,12 +1,30 @@
-/* ---------------- REMOVE GLOBAL CENTRING ---------------- */
+/* ---------------------------------------------------------
+   GLOBAL RESET + BLURRED GRADIENT BACKGROUND
+--------------------------------------------------------- */
 
-body, html {
+html, body {
     margin: 0;
     padding: 0;
-    text-align: left;   /* reset default */
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+
+    /* Soft blurred gradient background */
+    background: linear-gradient(135deg, #ff9aa2, #a1c4fd, #ffdde1);
+    background-size: 300% 300%;
+    animation: bgMove 18s ease infinite;
+
+    /* blur so colours are soft and not cluttered */
+    backdrop-filter: blur(12px);
 }
 
-/* Only explicitly centered items */
+/* Subtle movement animation */
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Only explicitly centered containers */
 .center-content {
     text-align: center;
 }
@@ -30,7 +48,11 @@ body, html {
     border-radius: 18px;
 }
 
-/* ---------------- NAVBAR ---------------- */
+
+/* ---------------------------------------------------------
+   NAVIGATION BAR
+--------------------------------------------------------- */
+
 .top-menu {
     width: 100%;
     background: rgba(255, 255, 255, 0.85);
@@ -61,14 +83,22 @@ body, html {
     transform: scale(1.06);
 }
 
-/* ---------------- BACKGROUND ---------------- */
+
+/* ---------------------------------------------------------
+   HOME-PAGE BACKGROUND (OPTIONAL)
+--------------------------------------------------------- */
+
 .home-background {
     background: linear-gradient(135deg, #ff4d6d, #6a88ff);
     background-size: cover;
     background-attachment: fixed;
 }
 
-/* ---------------- GRID OF LINKS ---------------- */
+
+/* ---------------------------------------------------------
+   HOME PAGE LINK GRID
+--------------------------------------------------------- */
+
 .home-grid {
     margin-top: 40px;
     display: grid;
@@ -97,7 +127,11 @@ body, html {
     box-shadow: 0 20px 35px rgba(0,0,0,0.3);
 }
 
-/* ---------------- GRADIENTS ---------------- */
+
+/* ---------------------------------------------------------
+   GRADIENT PRESETS FOR CARDS
+--------------------------------------------------------- */
+
 .rainbow-1 { background: linear-gradient(135deg, #ff9a9e, #fecfef); }
 .rainbow-2 { background: linear-gradient(135deg, #a1c4fd, #c2e9fb); }
 .rainbow-3 { background: linear-gradient(135deg, #fbc2eb, #a6c1ee); }
@@ -108,7 +142,11 @@ body, html {
 .rainbow-8 { background: linear-gradient(135deg, #cfd9df, #e2ebf0); }
 .rainbow-9 { background: linear-gradient(135deg, #ffdde1, #ee9ca7); }
 
-/* ---------------- PAGE CONTENT ---------------- */
+
+/* ---------------------------------------------------------
+   PAGE CONTENT
+--------------------------------------------------------- */
+
 .content-container {
     max-width: 1100px;
     margin: 0 auto;
@@ -127,11 +165,49 @@ body, html {
     font-size: 1.4rem;
 }
 
-/* ---------------- MEDIA FIX ---------------- */
+
+/* ---------------------------------------------------------
+   NEW — SECTION TITLES + BOXES
+--------------------------------------------------------- */
+
+.section-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2rem;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.section-box {
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 30px;
+    margin: 25px 0 40px 0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Cute pastel left borders */
+.section-box.pink {
+    border-left: 10px solid #ff8fa3;
+}
+
+.section-box.blue {
+    border-left: 10px solid #a3c4ff;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE FIXES
+--------------------------------------------------------- */
+
 @media (max-width: 600px) {
     .top-menu a {
         font-size: 1rem;
         padding: 6px 10px;
     }
-}
 
+    .big-card {
+        padding: 25px;
+        font-size: 1.25rem;
+    }
+}
